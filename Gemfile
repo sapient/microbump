@@ -6,7 +6,9 @@ gem 'rails', '3.1.0.rc6'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'haml-rails'
+gem 'therubyracer'
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
