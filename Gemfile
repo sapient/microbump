@@ -20,6 +20,22 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'rb-inotify'
+  gem 'colored'
+  gem 'libnotify'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'turn', :require => false
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+end
 # Use unicorn as the web server
 # gem 'unicorn'
 
