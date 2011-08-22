@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Microbump Dashboard
+    = stylesheet_link_tag "application"
+    %link{:href => "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css", :rel => "stylesheet"}/
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .topbar
+      .container
+        %h3= link_to "Dashboard", admin_dashboard_url
+        %ul
+          %li= link_to "Home", root_url
+          %li= link_to "Posts", admin_posts_path
+    .container{:style => "margin-top: 40px;"}
+      = yield
