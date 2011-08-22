@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc6'
-
+gem 'sprockets', :git => 'https://github.com/sstephenson/sprockets.git'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -9,6 +9,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'therubyracer'
 gem 'devise'
+gem 'friendly_id', "~> 4.0.0.beta8"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +22,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'rails-footnotes', '>= 3.7'
   gem 'rb-inotify'
   gem 'colored'
   gem 'libnotify'
