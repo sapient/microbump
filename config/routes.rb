@@ -1,6 +1,11 @@
 Microbump::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+
+  namespace :admin do
+    match "dashboard" => "dashboard#index", :via => :get
+    resources :posts
+  end
+
+  resources :posts, :only => [:show, :index]
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -48,7 +53,7 @@ Microbump::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'site#index'
 
   # See how all your routes lay out with "rake routes"
 
