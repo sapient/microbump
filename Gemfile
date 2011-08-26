@@ -26,7 +26,6 @@ end
 group :development, :test do
   gem 'rspec-rails', "~> 2.6"
   gem 'cucumber-rails'
-  gem 'rails-footnotes', '>= 3.7'
   gem 'silent-postgres'
   gem 'guard-cucumber'
   gem 'guard-rspec'

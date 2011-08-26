@@ -144,8 +144,6 @@ GEM
       activesupport (= 3.1.0.rc6)
       bundler (~> 1.0)
       railties (= 3.1.0.rc6)
-    rails-footnotes (3.7.4)
-      rails (>= 3.0.0)
     railties (3.1.0.rc6)
       actionpack (= 3.1.0.rc6)
       activesupport (= 3.1.0.rc6)
@@ -226,7 +224,6 @@ DEPENDENCIES
   pg
   pickle
   rails (= 3.1.0.rc6)
-  rails-footnotes (>= 3.7)
   rb-inotify
   rspec-rails (~> 2.6)
   sass-rails (~> 3.1.0.rc)
