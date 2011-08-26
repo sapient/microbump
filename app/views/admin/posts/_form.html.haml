@@ -6,13 +6,13 @@
         - @post.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .clearfix
     = f.label :title
-    = f.text_field :title, :class => "xlarge"
-  .field
+    = f.text_field :title, :class => "xxlarge"
+  .clearfix
     = f.label :content
-    = f.text_area :content, :rows => 10, :class => "xlarge"
-  .field
+    = f.text_area :content, :rows => 10, :class => "xxlarge"
+  .clearfix
     = f.label :published
     = f.check_box :published, :class => "xlarge"
   .actions

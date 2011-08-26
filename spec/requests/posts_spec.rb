@@ -25,11 +25,14 @@ describe "Posts" do
 
   describe "posts section of admin panel" do
     it "should display a list of the posts" do
-      3.times { Factory(:post) }
+      Factory(:post, :title => "Title 1")
+      Factory(:post, :title => "Title 2")
+      Factory(:post, :title => "Title 3")
       visit "/admin/posts"
-      page.should have_content("Title of post 1")
-      page.should have_content("Title of post 2")
-      page.should have_content("Title of post 3")
+      page.should have_content("Title 1")
+      page.should have_content("Title 2")
+      page.should have_content("Title 3")
+
     end
 
     it "should have a New Post button" do

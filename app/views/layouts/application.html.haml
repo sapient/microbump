@@ -2,12 +2,18 @@
 %html
   %head
     %title Microbump
-    = stylesheet_link_tag    "application"
     %link{:href => "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.0.0.min.css", :rel => "stylesheet"}/
+    = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{ :class => params[:controller] }
+    .notice= notice if notice.present?
     .container
       %h1= link_to "Microbump", root_url
-      = yield
-      = link_to "Dashboard", admin_dashboard_path
+      .row
+        .span12.columns.darken
+          .content= yield
+        .span4.columns.darken
+          #sidebar
+            .dash= link_to "Dashboard", admin_dashboard_path
+            .about!= User.first.about

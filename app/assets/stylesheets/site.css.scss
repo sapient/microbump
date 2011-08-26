@@ -1,3 +1,50 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+html, body {
+  height: 100%;
+  background-image: url("/assets/blackboard.jpg");
+  backrgound-color: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 21px;
+  color: #B9B9B9;
+}
+
+h2, h1 a, h2 a {
+  color: #44FF66;
+  &:hover {
+    color: #55FF77;
+  }
+}
+
+body.site {
+  .darken {
+    background-color: rgba(0, 0, 0, 0.45);
+    @include rounded-corners(15px)
+  }
+
+  #posts {
+    padding: 14px;
+  }
+
+  #sidebar {
+    padding: 13px;
+  }
+  .post {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #444;
+  }
+  .sub-post {
+    font-size: 12px;
+    a { float: right; }
+  }
+}

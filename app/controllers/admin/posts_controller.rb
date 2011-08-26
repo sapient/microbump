@@ -35,6 +35,7 @@ class Admin::PostsController < Admin::ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    session[:backto] = params[:backto]
   end
 
   # POST /posts
@@ -60,7 +61,14 @@ class Admin::PostsController < Admin::ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
+        format.html {
+          if session[:backto].present?
+            redirect_to session[:backto]
+            return
+          else
+            redirect_to [:admin, @post], notice: 'Post was successfully updated.'
+          end
+        }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -79,5 +87,17 @@ class Admin::PostsController < Admin::ApplicationController
       format.html { redirect_to admin_posts_path }
       format.json { head :ok }
     end
+  end
+
+  def publish
+    @post = Post.find(params[:id])
+    @post.publish!
+    redirect_to :back
+  end
+
+  def unpublish
+    @post = Post.find(params[:id])
+    @post.unpublish!
+    redirect_to :back
   end
 end

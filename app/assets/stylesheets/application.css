@@ -5,6 +5,5 @@
  *= require_self
  *= require posts
  *= require site
- *= require dashboard
  * require_tree .
 */
