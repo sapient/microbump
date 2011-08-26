@@ -10,6 +10,9 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'therubyracer'
 gem 'friendly_id', "~> 4.0.0.beta8"
+gem 'kaminari'
+gem 'cancan'
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,12 +25,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails', "~> 2.6"
+  gem 'cucumber-rails'
   gem 'rails-footnotes', '>= 3.7'
-  gem 'rb-inotify'
-  gem 'colored'
-  gem 'libnotify'
+  gem 'silent-postgres'
+  gem 'guard-cucumber'
   gem 'guard-rspec'
-  gem 'guard-livereload'
+  gem 'rb-inotify'
+  gem 'libnotify'
+  gem 'colored'
+  gem 'timecop'
+  gem 'pickle'
 end
 
 group :test do
@@ -36,4 +43,5 @@ group :test do
   gem 'turn', :require => false
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'shoulda'
 end
