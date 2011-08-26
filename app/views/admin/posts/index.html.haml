@@ -1,0 +1,25 @@
+%h1 Listing posts
+
+%table.zebra-striped
+  %tr
+    %th Title
+    %th Content
+    %th
+    %th Published at
+    %th
+    %th
+
+  - @posts.each do |post|
+    %tr
+      %td
+        %span.ext= link_to image_tag("new_window.png"), post_path(post), :target => "_blank"
+        = link_to post.title, post_path(post)
+      %td= post.content
+      %td= post.published? ? link_to( "Published", unpublish_admin_post_path(post), :method => :post ) : link_to( "Unpublished", publish_admin_post_path(post), :method => :post )
+      %td{:width => "90px"}= post.published_at.try(:to_s, :short)
+      %td= link_to image_tag("pencil_32.png"), edit_admin_post_path(post)
+      %td= link_to image_tag("delete_32.png"), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Post', new_admin_post_path, :class => "btn xlarge primary"

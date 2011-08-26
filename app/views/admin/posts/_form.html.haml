@@ -1,0 +1,21 @@
+= form_for [:admin, @post], :html => {:class => "form-stacked"} do |f|
+  -if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+
+  .clearfix
+    = f.label :title
+    = f.text_field :title, :class => "xxlarge"
+  .clearfix
+    = f.label :content
+    = f.text_area :content, :rows => 10, :class => "xxlarge"
+  .clearfix
+    = f.label :published
+    = f.check_box :published, :class => "xlarge"
+  .actions
+    = f.submit 'Save', :class => "btn primary"
+    = link_to 'Back', admin_posts_path, :class => "btn"
+

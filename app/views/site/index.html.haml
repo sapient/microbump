@@ -1,0 +1,9 @@
+#posts
+  - @posts.each do |post|
+    .post
+      %h2= link_to post.title, post
+      .post-content!= simple_format post.content
+      .sub-post
+        = "Published about #{time_ago_in_words post.published_at} ago"
+        = link_to "Edit this post", edit_admin_post_path(post, :backto => request.url)
+-logger.debug params.inspect.to_s.red
