@@ -13,6 +13,7 @@ gem 'friendly_id', "~> 4.0.0.beta8"
 gem 'kaminari'
 gem 'cancan'
 gem 'heroku'
+gem 'colored'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +32,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-inotify'
   gem 'libnotify'
-  gem 'colored'
   gem 'timecop'
   gem 'pickle'
 end
